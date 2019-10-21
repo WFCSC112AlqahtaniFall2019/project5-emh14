@@ -11,10 +11,10 @@ private:
     int cardsLeft; //logical size of the array
 
 public:
-    //Default Constructor for initializing the game
+    //Constructor for initializing the game
     Deck();
 
-    //The Big Three
+    //The Big Three:
 
     //1. Destructor
     ~Deck();
