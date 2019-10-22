@@ -6,6 +6,12 @@
 using namespace std;
 
 int main() {
+
+    Deck newGame;
+    newGame.newDeck();
+    Card playerCard;
+    Card computerCard;
+
     cout << "Welcome to Blind Man's Bluff" << endl << endl;
     bool play, invalid, guessedHigher;
     string response;

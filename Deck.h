@@ -21,7 +21,7 @@ public:
     //2. Copy constructor
     Deck(const Deck& copyDeck);
     //3. Copy assignment operator
-    Deck& operator = (Deck& deckToCopy);
+    Deck& operator=(Deck deckToCopy);
 
 
     //Populates the deck with 52 cards
@@ -30,11 +30,11 @@ public:
     //Shuffles the cards in the deck
     void shuffleDeck();
 
-    //Chooses a card from the deck
-    int chooseCard();
+    //Remove a card from the deck
+    Card removeCard();
 
     //Adds a card to the deck
-    bool addCard();
+    bool addCard(Card newCard);
 };
 
 
