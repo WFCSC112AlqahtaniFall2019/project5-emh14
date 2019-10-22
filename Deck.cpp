@@ -61,7 +61,10 @@ Card Deck::removeCard() {
 
 //Adds a card to the deck
 bool Deck::addCard(Card newCard) {
+    if (cardsLeft == 52) {
+        return false;
+    }
     //pre-increment cardsLeft before adding to deck
     cards[++cardsLeft] = newCard;
-
+    return true;
 }
