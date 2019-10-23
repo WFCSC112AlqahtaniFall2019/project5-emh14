@@ -14,9 +14,11 @@ using namespace std;
 
 int main() {
 
-    //creating new deck and populating it
+    //creating new deck
     Deck newGame;
+    //populating it in order like opening a brand new deck
     newGame.newDeck();
+    //shuffle the deck
     newGame.shuffleDeck();
 
     //creating (empty) deck for discard pile
