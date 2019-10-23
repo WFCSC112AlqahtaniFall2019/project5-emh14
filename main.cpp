@@ -81,6 +81,7 @@ int main() {
             }
             //check to see if there are cards left before looping again
             if (newGame->getNumCardsLeft() == 0) {
+                cout << "Deck empty! Game over!" << endl;
                 play = false;
             }
         }
