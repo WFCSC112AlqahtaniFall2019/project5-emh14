@@ -9,9 +9,11 @@ using namespace std;
 int main() {
 
     //creating new deck and populating it
-    Deck* newGame = new Deck();
-    newGame->newDeck();
-    newGame->shuffleDeck();
+    newGame.newDeck();
+    newGame.shuffleDeck();
+
+    //creating (empty) deck for discard pile
+    Deck discardPile;
 
     //create two new cards for two new players
     Card playerCard;
@@ -26,8 +28,11 @@ int main() {
     play = true;
     while (play) {
         // assign values to computer and player
-        playerCard = newGame->removeCard();
-        computerCard = newGame->removeCard();
+        playerCard = newGame.removeCard();
+        computerCard = newGame.removeCard();
+
+        //add the selected cards to discard pile
+        discardPile.addCard();
 
         // get user's bet
         cout << "Computer's value is " << computerCard.yourCardIs() << endl;
@@ -80,7 +85,7 @@ int main() {
                 invalid = true;
             }
             //check to see if there are cards left before looping again
-            if (newGame->getNumCardsLeft() == 0) {
+            if (newGame.getNumCardsLeft() == 0) {
                 cout << "Deck empty! Game over!" << endl;
                 play = false;
             }

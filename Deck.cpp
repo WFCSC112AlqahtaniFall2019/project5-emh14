@@ -3,6 +3,8 @@
 
 //Constructor for initializing the game
 Deck::Deck() {
+    cout << "default constructor called" << endl;
+
     cards = new Card[52];
     arraySize = 52;
     cardsLeft = 0;
@@ -12,20 +14,29 @@ Deck::Deck() {
 
 //1. Destructor
 Deck::~Deck() {
+    cout << "destructor called" << endl;
     delete[] cards;
 }
 
 //2. Copy constructor
 Deck::Deck(const Deck &copyDeck) {
-    cards = copyDeck.cards;
+    cout << "Copy constructor called" << endl;
+
+    //deep copy for each card
+    cards = new Card[52]; //allocate memory for cards again in heap
+    for (int i = 0; i < arraySize; i++){
+        cards[i] = copyDeck.cards[i];
+    }
+
     arraySize = copyDeck.arraySize;
     cardsLeft = copyDeck.cardsLeft;
 }
 
 //3. Copy assignment operator
 Deck &Deck::operator=(Deck deckToCopy) {
-    swap(cards, deckToCopy.cards); //built-in swap
+    cout << "Copy assignment operator called" << endl;
 
+    swap(cards, deckToCopy.cards); //built-in swap
     //primitive values do not need swap function
     arraySize = deckToCopy.arraySize;
     cardsLeft = deckToCopy.cardsLeft;
@@ -36,12 +47,12 @@ Deck &Deck::operator=(Deck deckToCopy) {
 
 //Populates the deck with 52 cards
 void Deck::newDeck() {
-    //iterate for every suit
+    //iterate for every suit (s)
     for (int s = 0; s < 4; s++) {
-        //iterate for every rank
+        //iterate for every rank (r)
         for (int r = 0; r < 13; r++) {
-            Card *newCard = new Card(r, s);
-            addCard(*newCard);
+            Card newCard(r, s);
+            addCard(newCard);
         }
     }
 
