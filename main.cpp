@@ -11,6 +11,7 @@ int main() {
     //creating new deck and populating it
     Deck newGame;
     newGame.newDeck();
+    newGame.shuffleDeck();
 
     //create two new cards for two new players
     Card playerCard;
@@ -50,7 +51,7 @@ int main() {
         }
 
         // determine outcome
-        if ((playerCard > computerCard && guessedHigher) || ((computerCard > playerCard && !guessedHigher)) {
+        if ((playerCard > computerCard && guessedHigher) || (computerCard > playerCard && !guessedHigher)) {
             cout << "Great! You're right:" << endl;
             nWin++;
         } else {

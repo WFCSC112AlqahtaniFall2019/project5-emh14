@@ -37,10 +37,10 @@ Deck &Deck::operator=(Deck deckToCopy) {
 //Populates the deck with 52 cards
 void Deck::newDeck() {
     //iterate for every suit
-    for (int i = 0; i < 4; i++) {
+    for (int s = 0; s < 4; s++) {
         //iterate for every rank
-        for (int j = 0; j < 13; j++) {
-            Card *newCard = new Card;
+        for (int r = 0; r < 13; r++) {
+            Card *newCard = new Card(r, s);
         }
     }
 }
