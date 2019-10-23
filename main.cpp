@@ -1,3 +1,9 @@
+/* Ethan Harrison
+ * CSC 112
+ * Project 5
+ * Blind Man's Bluff
+ * */
+
 #include <iostream>
 #include <string>
 #include <cctype>

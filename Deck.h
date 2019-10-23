@@ -1,3 +1,9 @@
+/* Ethan Harrison
+ * CSC 112
+ * Project 5
+ * Blind Man's Bluff
+ * */
+
 #ifndef BLINDMANSBLUFF_DECK_H
 #define BLINDMANSBLUFF_DECK_H
 
