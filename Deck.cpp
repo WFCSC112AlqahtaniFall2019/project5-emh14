@@ -3,7 +3,7 @@
 
 //Constructor for initializing the game
 Deck::Deck() {
-    cout << "default constructor called" << endl;
+    //cout << "default constructor called" << endl;
 
     cards = new Card[52];
     arraySize = 52;

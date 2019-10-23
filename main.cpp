@@ -71,6 +71,14 @@ int main() {
         // ask user to play again
         invalid = true;
         while (invalid) {
+
+            //check to see if there are cards left before looping again
+            if (newGame.getNumCardsLeft() == 0) {
+                cout << "Deck empty! Game over!" << endl;
+                play = false;
+                break;
+            }
+
             cout << "Play again? (Y/N)" << endl;
             cin >> response;
             if (toupper(response.at(0)) == 'Y') {
@@ -86,11 +94,7 @@ int main() {
                 cout << "Invalid response..." << endl;
                 invalid = true;
             }
-            //check to see if there are cards left before looping again
-            if (newGame.getNumCardsLeft() == 0) {
-                cout << "Deck empty! Game over!" << endl;
-                play = false;
-            }
+
         }
     }
 
