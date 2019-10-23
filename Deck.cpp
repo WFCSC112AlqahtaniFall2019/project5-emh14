@@ -1,11 +1,11 @@
+#include <iostream>
 #include "Deck.h"
 
 //Constructor for initializing the game
 Deck::Deck() {
-    Card *cards = 0;
-    int arraySize = 0;
-    int cardsLeft = 52;
-
+    cards = new Card[52];
+    arraySize = 52;
+    cardsLeft = 0;
 }
 
 //The Big Three:
@@ -41,8 +41,12 @@ void Deck::newDeck() {
         //iterate for every rank
         for (int r = 0; r < 13; r++) {
             Card *newCard = new Card(r, s);
+            addCard(*newCard);
         }
     }
+
+    // Set the cardsLeft to 52
+    cardsLeft = 52;
 }
 
 //Shuffles the cards in the deck
