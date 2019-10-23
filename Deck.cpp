@@ -68,7 +68,6 @@ void Deck::newDeck() {
 
 //Shuffles the cards in the deck
 void Deck::shuffleDeck() {
-    srand(time(NULL)); //seed random generator with time
     for (int i = 0; i <= cardsLeft * cardsLeft; i++) {
         //generates random positions and swaps them
         swap(cards[rand() % cardsLeft], cards[rand() % cardsLeft]);

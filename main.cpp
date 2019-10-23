@@ -19,6 +19,7 @@ int main() {
     //populating it in order like opening a brand new deck
     newGame.newDeck();
     //shuffle the deck
+    srand(time(NULL)); //seed random generator with time
     newGame.shuffleDeck();
 
     //creating (empty) deck for discard pile
@@ -32,7 +33,7 @@ int main() {
     bool play, invalid, guessedHigher;
     string response;
     int nWin = 0, nLoss = 0;
-    srand(time(NULL));
+
 
     play = true;
     while (play) {
