@@ -68,6 +68,7 @@ void Deck::newDeck() {
 
 //Shuffles the cards in the deck
 void Deck::shuffleDeck() {
+    // shuffle by performing cardsLeft^2 swaps of two randomly chosen cards in the deck
     for (int i = 0; i <= cardsLeft * cardsLeft; i++) {
         //generates random positions and swaps them
         swap(cards[rand() % cardsLeft], cards[rand() % cardsLeft]);

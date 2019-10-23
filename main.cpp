@@ -37,7 +37,7 @@ int main() {
 
     play = true;
     while (play) {
-        // assign values to computer and player
+        // take the new cards out of the deck
         playerCard = newGame.removeCard();
         computerCard = newGame.removeCard();
 
@@ -77,7 +77,7 @@ int main() {
 
         cout << "\tyour value is " << playerCard.yourCardIs() << endl;
 
-        // ask user to play again
+
         invalid = true;
         while (invalid) {
 
@@ -87,7 +87,7 @@ int main() {
                 play = false;
                 break;
             }
-
+            // ask user to play again
             cout << "Play again? (Y/N)" << endl;
             cin >> response;
             if (toupper(response.at(0)) == 'Y') {
