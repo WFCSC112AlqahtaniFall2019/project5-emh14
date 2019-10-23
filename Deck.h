@@ -35,6 +35,9 @@ public:
 
     //Adds a card to the deck
     bool addCard(Card newCard);
+
+    //getter for number of cards left
+    int getNumCardsLeft();
 };
 
 

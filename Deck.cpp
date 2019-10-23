@@ -68,3 +68,8 @@ bool Deck::addCard(Card newCard) {
     cards[++cardsLeft] = newCard;
     return true;
 }
+
+//getter for number of cards left
+int Deck::getNumCardsLeft(){
+    return cardsLeft;
+}

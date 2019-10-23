@@ -3,31 +3,35 @@
 #include <cctype>
 #include "Card.h"
 #include "Deck.h"
+
 using namespace std;
 
 int main() {
 
+    //creating new deck and populating it
     Deck newGame;
     newGame.newDeck();
+
+    //create two new cards for two new players
     Card playerCard;
     Card computerCard;
 
     cout << "Welcome to Blind Man's Bluff" << endl << endl;
     bool play, invalid, guessedHigher;
     string response;
-    int compValue, userValue, nWin = 0, nLoss = 0, nTie = 0;
+    int nWin = 0, nLoss = 0;
     srand(time(NULL));
 
     play = true;
-    while(play) {
-        // assign values to computer and user
-        compValue = rand() % 52;
-        userValue = rand() % 52;
+    while (play) {
+        // assign values to computer and player
+        playerCard = newGame.removeCard();
+        computerCard = newGame.removeCard();
 
         // get user's bet
-        cout << "Computer's value is " << compValue << endl;
+        cout << "Computer's value is " << computerCard.yourCardIs() << endl;
         invalid = true;
-        while(invalid) {
+        while (invalid) {
             cout << "Do you think your number is higher or lower? (H/L)" << endl;
             cin >> response;
             if (toupper(response.at(0)) == 'H') {
@@ -46,21 +50,19 @@ int main() {
         }
 
         // determine outcome
-        if((compValue < userValue && guessedHigher) || (compValue > userValue && !guessedHigher)) {
+        if ((playerCard > computerCard && guessedHigher) || ((computerCard > playerCard && !guessedHigher)) {
             cout << "Great! You're right:" << endl;
             nWin++;
-        } else if((compValue > userValue && guessedHigher) || (compValue < userValue && !guessedHigher)) {
+        } else {
             cout << "Sorry, you're wrong:" << endl;
             nLoss++;
-        } else {
-            cout << "It's a tie:" << endl;
-            nTie++;
         }
-        cout << "\tyour value is " << userValue << endl;
+
+        cout << "\tyour value is " << playerCard.yourCardIs() << endl;
 
         // ask user to play again
         invalid = true;
-        while(invalid) {
+        while (invalid) {
             cout << "Play again? (Y/N)" << endl;
             cin >> response;
             if (toupper(response.at(0)) == 'Y') {
@@ -76,12 +78,16 @@ int main() {
                 cout << "Invalid response..." << endl;
                 invalid = true;
             }
+            //check to see if there are cards left before looping again
+            if (newGame.getNumCardsLeft() == 0) {
+                play = false;
+            }
         }
     }
 
     // output stats
     cout << "Thanks for playing!" << endl;
-    cout << "Your record was " << nWin << "-" << nLoss << "-" << nTie << " (W-L-T)" << endl;
+    cout << "Your record was " << nWin << "-" << nLoss << " (W-L)" << endl;
 
     return 0;
 }

@@ -16,12 +16,12 @@ Card::Card(int cardRank, int cardSuit){
     //The rank is more important than the suit
     //Aces are low and Queens are high, so that A<2<...<10<J<K<Q
     //Suits are ordered alphabetically, so that Clubs < Diamonds < Hearts < Spades
-bool Card::operator>(Card *opponent){
-    if (rank == opponent->rank){// if the ranks of the two cards are equal
-        return suit > opponent->suit;// the suit will be evaluated
+bool Card::operator>(Card opponent){
+    if (rank == opponent.rank){// if the ranks of the two cards are equal
+        return suit > opponent.suit;// the suit will be evaluated
     }
 
-    return rank > opponent->rank;//evaluate ranks if they are different
+    return rank > opponent.rank;//evaluate ranks if they are different
 }
 
 //Returns a string specifying the value of the card
