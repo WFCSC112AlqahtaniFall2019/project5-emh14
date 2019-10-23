@@ -14,13 +14,13 @@ Deck::Deck() {
 
 //1. Destructor
 Deck::~Deck() {
-    cout << "destructor called" << endl;
+    //cout << "destructor called" << endl;
     delete[] cards;
 }
 
 //2. Copy constructor
 Deck::Deck(const Deck &copyDeck) {
-    cout << "Copy constructor called" << endl;
+    //cout << "Copy constructor called" << endl;
 
     //deep copy for each card
     cards = new Card[52]; //allocate memory for cards again in heap
@@ -34,7 +34,7 @@ Deck::Deck(const Deck &copyDeck) {
 
 //3. Copy assignment operator
 Deck &Deck::operator=(Deck deckToCopy) {
-    cout << "Copy assignment operator called" << endl;
+    //cout << "Copy assignment operator called" << endl;
 
     swap(cards, deckToCopy.cards); //built-in swap
     //primitive values do not need swap function

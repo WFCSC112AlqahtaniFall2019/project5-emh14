@@ -9,6 +9,7 @@ using namespace std;
 int main() {
 
     //creating new deck and populating it
+    Deck newGame;
     newGame.newDeck();
     newGame.shuffleDeck();
 
@@ -32,7 +33,8 @@ int main() {
         computerCard = newGame.removeCard();
 
         //add the selected cards to discard pile
-        discardPile.addCard();
+        discardPile.addCard(playerCard);
+        discardPile.addCard(computerCard);
 
         // get user's bet
         cout << "Computer's value is " << computerCard.yourCardIs() << endl;
