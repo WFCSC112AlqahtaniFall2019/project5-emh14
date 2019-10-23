@@ -12,7 +12,7 @@
 class Deck {
 
 private:
-    Card* cards; //pointer to array of cards
+    Card *cards; //pointer to array of cards
     int arraySize; //physical size of the array
     int cardsLeft; //logical size of the array
 
@@ -24,10 +24,12 @@ public:
 
     //1. Destructor
     ~Deck();
+
     //2. Copy constructor
-    Deck(const Deck& copyDeck);
+    Deck(const Deck &copyDeck);
+
     //3. Copy assignment operator
-    Deck& operator=(Deck deckToCopy);
+    Deck &operator=(Deck deckToCopy);
 
 
     //Populates the deck with 52 cards

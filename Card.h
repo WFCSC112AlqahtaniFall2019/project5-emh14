@@ -30,9 +30,9 @@ public:
     Card(int cardRank, int cardSuit);
 
     //Overloaded comparison operator
-        //The rank is more important than the suit
-        //Aces are low and Queens are high, so that A<2<...<10<J<K<Q
-        //Suits are ordered alphabetically, so that Clubs < Diamonds < Hearts < Spades
+    //The rank is more important than the suit
+    //Aces are low and Queens are high, so that A<2<...<10<J<K<Q
+    //Suits are ordered alphabetically, so that Clubs < Diamonds < Hearts < Spades
     bool operator>(Card opponent);
 
     //Returns a string specifying the value of the card
