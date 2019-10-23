@@ -46,7 +46,7 @@ int main() {
         discardPile.addCard(computerCard);
 
         // get user's bet
-        cout << "Computer's value is " << computerCard.yourCardIs() << endl;
+        cout << "Computer's value is the " << computerCard.yourCardIs() << endl;
         invalid = true;
         while (invalid) {
             cout << "Do you think your number is higher or lower? (H/L)" << endl;
@@ -75,7 +75,7 @@ int main() {
             nLoss++;
         }
 
-        cout << "\tyour value is " << playerCard.yourCardIs() << endl;
+        cout << "\tyour value is the " << playerCard.yourCardIs() << endl;
 
 
         invalid = true;
