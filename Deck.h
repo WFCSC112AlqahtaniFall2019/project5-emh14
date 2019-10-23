@@ -44,6 +44,9 @@ public:
 
     //getter for number of cards left
     int getNumCardsLeft();
+
+    //print cards in the deck
+    void printCards();
 };
 
 

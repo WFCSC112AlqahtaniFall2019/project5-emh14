@@ -45,6 +45,9 @@ int main() {
         discardPile.addCard(playerCard);
         discardPile.addCard(computerCard);
 
+        //print discard pile
+        discardPile.printCards();
+
         // get user's bet
         cout << "Computer's value is the " << computerCard.yourCardIs() << endl;
         invalid = true;

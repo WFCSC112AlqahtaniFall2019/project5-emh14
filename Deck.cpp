@@ -86,12 +86,19 @@ bool Deck::addCard(Card newCard) {
     if (cardsLeft == 52) {
         return false;
     }
-    //pre-increment cardsLeft before adding to deck
-    cards[++cardsLeft] = newCard;
+    //Post-increment cardsLeft before adding to deck
+    cards[cardsLeft++] = newCard;
     return true;
 }
 
 //getter for number of cards left
 int Deck::getNumCardsLeft() {
     return cardsLeft;
+}
+
+//print cards in the deck
+void Deck::printCards() {
+    for (int i = 0; i < cardsLeft; i++) {
+        cout << cards[i].yourCardIs() << endl << endl;
+    }
 }
