@@ -30,7 +30,7 @@ Deck::Deck(const Deck &copyDeck) {
 
     //deep copy for each card
     cards = new Card[52]; //allocate memory for cards again in heap
-    for (int i = 0; i < arraySize; i++){
+    for (int i = 0; i < arraySize; i++) {
         cards[i] = copyDeck.cards[i];
     }
 
@@ -78,7 +78,7 @@ void Deck::shuffleDeck() {
 //Remove a card from the deck
 Card Deck::removeCard() {
     //returns card at the logical end of the array
-    return cards[cardsLeft--];
+    return cards[--cardsLeft];
 }
 
 //Adds a card to the deck
@@ -92,6 +92,6 @@ bool Deck::addCard(Card newCard) {
 }
 
 //getter for number of cards left
-int Deck::getNumCardsLeft(){
+int Deck::getNumCardsLeft() {
     return cardsLeft;
 }
